@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "5.3.3.3"
+}
+group 'io.jerry'
+version '1.0-SNAPSHOT'
+description  = 'demo application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //CASSANDRA
+    implementation 'org.springframework.data:spring-data-cassandra:3.3.1'
+    //METRICS
+    implementation 'io.micrometer:micrometer-registry-prometheus:1.8.2'
+    //LOGGING
+    runtimeOnly 'net.logstash.logback:logstash-logback-encoder:7.0.1'
+    //TEST
+    testImplementation 'org.mockito:mockito-core:4.3.1'
+    //PRODUCTIVITY
+    implementation 'com.google.guava:guava:31.0.1-jre'
+}
+
+test {
+    useJUnitPlatform()
+}

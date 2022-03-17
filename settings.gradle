@@ -1,0 +1,6 @@
+rootProject.name = 'buildSrc-demo'
+include 'module-a'
+include 'module-b'
+//include 'updated-module-a'
+//include 'updated-module-b'
+

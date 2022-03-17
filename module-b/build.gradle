@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'io.jerry'
+version '1.0-SNAPSHOT'
+description  = 'functional-test'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //SPRING
+    testImplementation 'org.springframework.boot:spring-boot-starter-web:2.6.3'
+    //MOCK
+    testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
+    //TEST
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}

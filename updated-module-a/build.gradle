@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'project.java-lib'
+}
+
+group 'io.jerry'
+version '1.0-SNAPSHOT'
+description  = 'updated-demo-application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation Deps.cassandra
+    implementation Deps.prometheus
+    runtimeOnly Deps.logback_logstash
+    testImplementation Deps.mockito
+    implementation Deps.guava
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.register("printModule", PrintCurrentModuleTask) {
+    currentModule = "Updated-Module-a"
+}

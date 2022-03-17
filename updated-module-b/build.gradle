@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'project.java-lib'
+}
+
+group 'io.jerry'
+version '1.0-SNAPSHOT'
+description  = 'updated-functional-test'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation Deps.spring_boot_starter_web
+    implementation Deps.wiremock
+    runtimeOnly Deps.logback_logstash
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.register("printModule", PrintCurrentModuleTask) {
+    currentModule = "Updated-Module-b"
+}
